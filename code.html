@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Brendan Hawk</title>
+    <title>Evens 2 Hundo: A Coding Project By Brendan Hawk</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +25,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"> <img src="/img/whitelogo.png"  class="d-inline-block align-text-top"
-             width="70" height="35" > APP NAME</a>
+             width="70" height="35" > Evens 2 Hundo</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -55,14 +55,77 @@
 <!-- ==== Main Section ==== -->
 <main class="flex-shrink-0">
     <div class="container py-5 px-5 m-5">
-        <h2 class="border-1 border-bottom border-dark">The Code for APP NAME.</h2>
+        <h2 class="border-1 border-bottom border-dark">The Code for Evens 2 Hundo.</h2>
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col-lg-8">
                 <pre class="line-numbers"> <code class="language-javascript">
-                    // Call Hello World
-                    function HelloWorld() {
-                        alert("Hello World");
-                    }
+                    
+
+//get values from the UI
+//this is the start or controller function
+function getValues() {
+    //get values from page
+    let startValue = document.getElementById("startValue").value;
+    let endValue = document.getElementById("endValue").value;
+    
+    //need to validate the input
+    //parse into Integers
+    startValue = parseInt(startValue);
+    endValue = parseInt(endValue);
+
+    //
+    if(Number.isInteger(startValue) && Number.isInteger(endValue)) {
+        //call generateNumbers
+        let numbers = generateNumbers(startValue, endValue);
+        //call displayNumbers
+        displayNumbers(numbers);
+    } else{
+        alert("You must enter integers");
+    }
+
+}
+
+//generate numbers from start value to the end value
+//this is our logic function(s)
+function generateNumbers(sValue, eValue) {
+
+    let numbers = [];
+
+    
+    //get all numbers from start to end
+    for( let index = sValue; index <= eValue; index++) {
+
+        //this will execute in a loop until index= eValue
+        numbers.push(index);
+    }
+    return numbers;
+}
+
+//display the numbers and mark the even numbers in bold
+//this is the display or view functions
+function displayNumbers(numbers) {
+
+    let templateRows = "";
+
+    for (let index = 0; index < numbers.length; index++) {
+        let className = "even";
+
+        let number = numbers[index];
+
+        if (number % 2 == 0) {
+            className = "even";
+        } else {
+            className = "odd";
+        }
+
+        //This does render correctly with Prism see the source
+        templateRows += `<tr><td class="${className}">${number}</td></tr>`;
+    }
+
+    document.getElementById("results").innerHTML = templateRows;
+}
+
+
                 </code>
                 </pre>
             </div>
