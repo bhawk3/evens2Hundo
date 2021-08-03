@@ -42,11 +42,9 @@
                     <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/bhawk3/evens2Hundo">Git Repo</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">About</a>
-                </li>
+                
             </ul>
         </div>
     </div>
@@ -130,9 +128,21 @@ function displayNumbers(numbers) {
                 </pre>
             </div>
             <div class="col-lg-4">
-                <p> The Code is structured in one function.</p>
-                <h5>Hello World</h5>
-                <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                <h3 class="mt-5">getValues Function</h3>
+                <p class="mt-3"> This function gets the starting and end values from the HTML page and then parses them into integers.
+                    Then if the values are integers, the function generateNumbers is called. If the values aren't integers then an alert will pop up.
+                </p>
+
+                <h3 class="mt-5">generateNumbers Function</h3>
+                <p class="mt-3"> The numbers variable is equal to an empty array.
+                    The for loop sets index to the first param of sValue, then if index <= evalue, then index++ and the numbers var will push index.
+                </p>
+                <h3 class="mt-5">displayNumbers Function</h3>
+                <p class="mt-3">This function has a param of numbers. It sets the templateRows var equal to an empty string.
+                    The for loop then sets index equal to 0, and if index is < numbers.length, then index++.
+                    if thats true then set the var className = the string even and let the number var equal numbers[index]. And If number modulus 2 is == to 0 then className = even else className = odd.
+                    templateRows += the number. 
+                </p>
             </div>
         </div>
     </div>
@@ -153,10 +163,10 @@ function displayNumbers(numbers) {
 
                 <div class="col d-flex align-items-center justify-content-end-start justify-content-lg-end ">
                     <div class="row">
-                        <div class="col social"> <a href="#" target="_blank"><i class="fab fa-linkedin fa-2x"></i> </a> </div>
-                        <div class="col social"> <a href="#" target="_blank"> <i class="fab fa-github fa-2x"></i> </a> </div>
-                        <div class="col social"> <a href="#" target="_blank"> <i class="fab fa-twitter fa-2x"></i> </a> </div>
-                        <div class="col social"> <a href="#" target="_blank"> <i class="fab fa-instagram fa-2x"></i> </a> </div>
+                        <div class="col social"> <a href="https://www.linkedin.com/in/brendan-hawk-2240571b7/" target="_blank"><i class="fab fa-linkedin fa-2x"></i> </a> </div>
+                        <div class="col social"> <a href="https://github.com/bhawk3" target="_blank"> <i class="fab fa-github fa-2x"></i> </a> </div>
+                        <div class="col social"> <a href="https://twitter.com/brendanhawk03" target="_blank"> <i class="fab fa-twitter fa-2x"></i> </a> </div>
+                        <div class="col social"> <a href="https://www.instagram.com/b_the_dev/" target="_blank"> <i class="fab fa-instagram fa-2x"></i> </a> </div>
                     </div>
                 </div>
             </div>
